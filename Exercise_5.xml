@@ -1,0 +1,57 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initialize_smorphi" id="ZN%N/a}ZXXcO89}BmS37" x="102" y="63">
+    <next>
+      <block type="initialize_temp_sensors" id="6tn8W`Sj1KnD@X^viAX~">
+        <next>
+          <block type="serial_print" id="WP|lAfMf!R~mzC!vjrcG">
+            <field name="SERIAL_ID">Serial</field>
+            <field name="NEW_LINE">TRUE</field>
+            <next>
+              <block type="variables_set" id="YF.NmF_KD=pr`4jw/G!3">
+                <field name="VAR">tempC</field>
+                <value name="VALUE">
+                  <block type="temp_sensor_status" id="qB`3iWhib)isZIS=Xo-]"></block>
+                </value>
+                <next>
+                  <block type="controls_if" id="S.}UpK3*%]{3v*6WRL.`">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="fIHuEcJ-_OGd[p/,D:o@">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="variables_get" id="4.io(6/(G/_2e*xifS2w">
+                            <field name="VAR">tempC</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id=";4=1{=S(dJ|N%MnrocZf">
+                            <field name="NUM">30</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="robot_motion" id="?z*||j(LcCcXp#o!ZL7E">
+                        <field name="NAME">MoveForward</field>
+                        <value name="NAME">
+                          <block type="math_number" id="G1xX0FuRffGL9ZL4;-I`">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="robot_motion" id="19Lf_#n,W4,p:kjeBaD_">
+                        <field name="NAME">stopSmorphi</field>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

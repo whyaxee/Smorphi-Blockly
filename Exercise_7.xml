@@ -1,0 +1,71 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initialize_smorphi" id="U=icxzW?:ckS,7e+T(1/" x="30" y="40"></block>
+  <block type="front_ir" id="-+=DE%f)?6x+6CtYwnK%" x="65" y="113">
+    <field name="module_num">module_num</field>
+    <field name="status_num">status_num</field>
+    <next>
+      <block type="serial_print" id="M(B91^i#XzTR/0nAFDm5">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="NEW_LINE">TRUE</field>
+        <value name="CONTENT">
+          <block type="front_sensor_status" id="Q(^T{4-X^^LH(t16WVg,"></block>
+        </value>
+        <next>
+          <block type="controls_if" id="ao?|a.Gl?dNV;|yPzMmV">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="N`}~Jc9iJW!:5qxa}6NS">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="front_sensor_status" id="YXt#}#|G2KFIl(^uoc0@"></block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="Q6cOj7YYD)UH`nLqx9z9">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="serial_print" id="lZip,OKM#-va{u_EWIKd">
+                <field name="SERIAL_ID">Serial</field>
+                <field name="NEW_LINE">TRUE</field>
+                <value name="CONTENT">
+                  <block type="text" id="YIklZ!L)43!xY7CX!cst">
+                    <field name="TEXT">Nothing is in front!</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="robot_motion" id="r9u)rA-;%MUMNCzaG;?8">
+                    <field name="NAME">MoveForward</field>
+                    <value name="NAME">
+                      <block type="math_number" id="5OPwy5s[(jB}*u#Qs!(,">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="serial_print" id="QzNj[d@C`vT/eq[^vnqH">
+                <field name="SERIAL_ID">Serial</field>
+                <field name="NEW_LINE">TRUE</field>
+                <value name="CONTENT">
+                  <block type="text" id="XGXv{.wukZ74/32WqY~?">
+                    <field name="TEXT">Something is in front!</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="robot_motion" id="El~~g=y`f?8FeWoQgnCe">
+                    <field name="NAME">stopSmorphi</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

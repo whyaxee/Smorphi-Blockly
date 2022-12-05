@@ -1,0 +1,577 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initialize_smorphi" id="=i/K87,057USt_3(T0^V" x="-822" y="-721">
+    <next>
+      <block type="initialize_sensors" id="0[m3tz6d3RW%@DDcuIp`">
+        <next>
+          <block type="variables_set" id="%%_amD7QV#R=+ViHkx0x">
+            <field name="VAR">last_action</field>
+            <value name="VALUE">
+              <block type="text" id="*C:xcWrH1E|ovrYL+GhU">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <next>
+              <block type="front_ir" id="bOBYB/Ns9I~rAWX1bIOS">
+                <field name="module_num">1</field>
+                <field name="status_num">0</field>
+                <next>
+                  <block type="right_ir" id=";,]+ymX]~apnH#wi~k;,">
+                    <field name="module_num">1</field>
+                    <field name="status_num">4</field>
+                    <next>
+                      <block type="rear_ir" id="sx8Vx%Utnk9Wdj;Hehx/">
+                        <field name="module_num">3</field>
+                        <field name="status_num">6</field>
+                        <next>
+                          <block type="left_ir" id="jB|8LN;b0Mek~_3%yN?]">
+                            <field name="module_num">4</field>
+                            <field name="status_num">0</field>
+                            <next>
+                              <block type="controls_if" id="LY8_dnS8iszQM3%P{,2I">
+                                <mutation elseif="6" else="1"></mutation>
+                                <value name="IF0">
+                                  <block type="logic_operation" id="`vBy*oSq`cOsCKrxP3;h">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_operation" id="2b|VA:KKg]5_F)g~(U(m">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="G4_xij{{m//.~ef9G]D}">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="front_sensor_status" id="{Et7!1z6^{3CF15i1tKh"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="HS`xoNp7:-mXAjZXGTTN">
+                                                <field name="NUM">1</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="..4%n.x%89Q:iT)3q]vQ">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="rear_sensor_status" id="wp#71PY0LbpjHm{IZNOm"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="}1/972:BgQS3#).c#Zd}">
+                                                <field name="NUM">1</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_operation" id="a6({L.F4XKTW^S?nkTk8">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="-W%kp^98yYv/|}P0meXp">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="left_sensor_status" id="zP5^)/+Nrcd93ScuWHX]"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id=".N6(09k(]k:{,xTACUC9">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="kn%Iv@U,+QT@%}biOe=)">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="right_sensor_status" id="|9D#X%Bu9|3*P[{F#bzy"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="0ZH1@vvnID(ZTP.K9s_#">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="serial_print" id="@dEa3KW|V)`m47*x2xt4">
+                                    <field name="SERIAL_ID">Serial</field>
+                                    <field name="NEW_LINE">TRUE</field>
+                                    <value name="CONTENT">
+                                      <block type="text" id="ibCBIE/19KWrUqdC[4;K">
+                                        <field name="TEXT">Move straight</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="robot_motion" id="ZUi[#@~8^GKe3j/U-^of">
+                                        <field name="NAME">MoveForward</field>
+                                        <value name="NAME">
+                                          <block type="math_number" id="L.j=#tXuN1nb-j[Ol(ao">
+                                            <field name="NUM">8</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF1">
+                                  <block type="logic_operation" id="S%/3R4:5NpUw7tqC(|PS">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="hkc-BfJsY0yC.Cs/gJZr">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="front_sensor_status" id="28=+qf[sWb2XY#GWGs=z"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="Unfg|wQGzw2(DxG5N6Xl">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="|au?lCO;5-Qmoa@WE98v">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="right_sensor_status" id="#p?{dkYW#R^?T(P(PF@t"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="#KTp_?TY(YIfEipQ:~-c">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO1">
+                                  <block type="robot_motion" id="{tJ2~hg:8cA;e^[AzSET">
+                                    <field name="NAME">CenterPivotLeft</field>
+                                    <next>
+                                      <block type="variables_set" id="sKjI}SaRH!Ax:-!Z2|`j">
+                                        <field name="VAR">last_action</field>
+                                        <value name="VALUE">
+                                          <block type="text" id="%49dt:GDF8Xwgtugva3h">
+                                            <field name="TEXT">pivot_left</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF2">
+                                  <block type="logic_operation" id="W^^/fdkeOQ-Ks1v#u%nI">
+                                    <field name="OP">OR</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="`;6ImMq|9*jTIJ!I;JDt">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="R*{zq3uvUTc.h%(vKF0.">
+                                            <field name="VAR">last_action</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="text" id="=;eRybuM}pAD**wTU0[E">
+                                            <field name="TEXT">pivot_left</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_operation" id="8t5;Rd9~EN%K[6DRYj(O">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="_~wf_STmGm:isdd,_.!5">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="%YMiHy?7o^D{PfhL?TgA">
+                                                <field name="VAR">last_action</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="An/{[8E/1!?~H]9H:KO7">
+                                                <field name="TEXT">pivot_left</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="8YT?6VhmonJ,8owE9lGB">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="right_sensor_status" id="f}j4eFlu2scFNLP11i)M"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="e3jk+BbiZZG+}2Vh3UnH">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO2">
+                                  <block type="robot_motion" id="2F)h`lZd?[?BQO|Efu}q">
+                                    <field name="NAME">CenterPivotLeft</field>
+                                    <next>
+                                      <block type="time_delay" id="@U2R.0B#rZL@xdD,b{q?">
+                                        <value name="DELAY_TIME_MILI">
+                                          <block type="math_number" id=",/~Fi)3#/TV}vDwGW:%2">
+                                            <field name="NUM">1500</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="~pyOwwc`x.?v7Vz(Ad5*">
+                                            <field name="VAR">last_action</field>
+                                            <value name="VALUE">
+                                              <block type="text" id="2(oED~Mze46)_C.}mi-e">
+                                                <field name="TEXT">nill_pivot_left</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF3">
+                                  <block type="logic_operation" id="Ufzup5H9uhFf}y{Oa743">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="1gPwYr4~.t4)eTp_Ik5W">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="front_sensor_status" id="76MPF,,N1HIw=05GDZQf"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="KZ_WI3Fjn8mfiBGoO1:a">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="ET|e|cF=LNI7@NyDyF^z">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="left_sensor_status" id=")uVF*BD{s#i#%D.*~5-."></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="_f0Irn`PCac^WgLq!4[-">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO3">
+                                  <block type="robot_motion" id="XgNP4m2bOlENF#`GW]Rk">
+                                    <field name="NAME">CenterPivotRight</field>
+                                    <next>
+                                      <block type="variables_set" id="DHu2+|P5Fr!Ns^KL`ge[">
+                                        <field name="VAR">last_action</field>
+                                        <value name="VALUE">
+                                          <block type="text" id="P}x`?mx(Q=3SX,aC4DKB">
+                                            <field name="TEXT">pivot_right</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF4">
+                                  <block type="logic_operation" id="DFI9nlK0k*bE:g6H/2M^">
+                                    <field name="OP">OR</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="[KC[x=v~i#`~0x5Pdy^c">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="WJzXsV]ar%;T:9F4?.qp">
+                                            <field name="VAR">last_action</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="text" id="z=?Wf)AWzD@|25f]ar/E">
+                                            <field name="TEXT">pivot_right</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_operation" id="7S9M5M.^+|GPbBwkfR6N">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id=".Eogpfv0AjWb-0s6IK3C">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="2]%|@!}GCLliqIUqK@%^">
+                                                <field name="VAR">last_action</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="P(g.P/hB!Pr|E6un}jtq">
+                                                <field name="TEXT">pivot_right</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="sAj3i?L8N*bZIwk{4SU7">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="left_sensor_status" id="mOwrI??z:siCg3B^=5BZ"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="M*rquS0BmhU=+eAjr/,P">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO4">
+                                  <block type="robot_motion" id=".QZY[)dm5OMk-#628=!r">
+                                    <field name="NAME">CenterPivotRight</field>
+                                    <next>
+                                      <block type="time_delay" id="v];4/nd!VD9.7593m(B9">
+                                        <value name="DELAY_TIME_MILI">
+                                          <block type="math_number" id=",VZ2Ggt([530RGD^i!Kx">
+                                            <field name="NUM">1500</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id=")%j-1{sH/z,DP7hFH*MU">
+                                            <field name="VAR">last_action</field>
+                                            <value name="VALUE">
+                                              <block type="text" id="4#1aY}q_gzB_PH6Zb7^5">
+                                                <field name="TEXT">nill_pivot_right</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF5">
+                                  <block type="logic_operation" id="^-Qce|Q_.oRmjMqP6}Dv">
+                                    <field name="OP">OR</field>
+                                    <value name="A">
+                                      <block type="logic_operation" id="_BLEJwzHq1;~`t?-~8k]">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="n?1KbxR4VOj99Z9%|j0M">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="4|~qemAf1+2pP|klt:WW">
+                                                <field name="VAR">last_action</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="LQ||nOE].T?EIv;1BnL#">
+                                                <field name="TEXT">nill_pivot_left</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="n4=9-3I4QT7]4SEL!e]f">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="right_sensor_status" id="FCfdnpf}cY3ni1SUn0+A"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="?7h}oMwBz:_qr2p9)Hsm">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="6!YbvOlRW/4k|0S6GC!R">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="right_sensor_status" id="ZcE{kLL5g(1OzzX4lq8s"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id=",811}R#cYX}lsg+p|c4r">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO5">
+                                  <block type="robot_motion" id="-N)mrE94X))]nQA?F,oF">
+                                    <field name="NAME">CenterPivotLeft</field>
+                                    <next>
+                                      <block type="time_delay" id=".WV!~VfrfoJo~p@QBwMW">
+                                        <value name="DELAY_TIME_MILI">
+                                          <block type="math_number" id="al{pbh20Nt+cqbXA26xX">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="N#d7BR{N[3-wCcJm?!CC">
+                                            <field name="VAR">last_action</field>
+                                            <value name="VALUE">
+                                              <block type="text" id="51s4fMf/yw5YCKkxM]45">
+                                                <field name="TEXT"></field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF6">
+                                  <block type="logic_operation" id="}ZCg0uO_7(hQ0VQUF1;%">
+                                    <field name="OP">OR</field>
+                                    <value name="A">
+                                      <block type="logic_operation" id="toy]b(EmP+7=|I259fJe">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="YHKQ8^Yl@cS.ES-ATk#C">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="q]kH{5iXgcN^~B_5*FSP">
+                                                <field name="VAR">last_action</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="38_d45Ev)Jr]`R7A5y/^">
+                                                <field name="TEXT">nill_pivot_right</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="hZu_C(;zw;sRhhg(C:,h">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="left_sensor_status" id="ZXt1b`y!N,]#e6@dBv()"></block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="Ihn3`,1vgEL#s0uDL1FK">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="VP~]crOZ7UU4):Sf^`sr">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="left_sensor_status" id="#/LG(4,3TKX:bjBJ;y#p"></block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="x+hoH62weqN4?/9+0Xxg">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO6">
+                                  <block type="robot_motion" id="/=9G6_BH,l%E@`:U7yz7">
+                                    <field name="NAME">CenterPivotRight</field>
+                                    <next>
+                                      <block type="time_delay" id="q#+i59dSh~+;cjq2|W)b">
+                                        <value name="DELAY_TIME_MILI">
+                                          <block type="math_number" id="#vZtFv1W@SOn/xeIFhK/">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="variables_set" id="BJ,PN;-_/,[No_fny:`u">
+                                            <field name="VAR">last_action</field>
+                                            <value name="VALUE">
+                                              <block type="text" id="fG:F(bU!Ff|AyCq~K._U">
+                                                <field name="TEXT"></field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <statement name="ELSE">
+                                  <block type="serial_print" id="9}roOJ%0+E4l-`g|hsaw">
+                                    <field name="SERIAL_ID">Serial</field>
+                                    <field name="NEW_LINE">TRUE</field>
+                                    <value name="CONTENT">
+                                      <block type="text" id="Y+.R8c:e/kWyoQrdb)g~">
+                                        <field name="TEXT">Move forward</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="robot_motion" id="3iW8#]8{f*WLntj9{Gtc">
+                                        <field name="NAME">MoveForward</field>
+                                        <value name="NAME">
+                                          <block type="math_number" id="B]o}S]R)xFyr;70!Scr}">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="robot_motion" id="`0C6iiy,Buf.ldrx.QLW">
+                                    <field name="NAME">stopSmorphi</field>
+                                    <next>
+                                      <block type="sm_reset" id="b;1adO!ard%9hu-=E~0e">
+                                        <field name="NAME">sm_reset_M1</field>
+                                        <next>
+                                          <block type="sm_reset" id="9b0JbUQ).LExQqLhTm-r">
+                                            <field name="NAME">sm_reset_M2</field>
+                                            <next>
+                                              <block type="sm_reset" id="Tf1Nin=tQG{#3=k^cd`/">
+                                                <field name="NAME">sm_reset_M3</field>
+                                                <next>
+                                                  <block type="sm_reset" id="{n;3kW/i,!amnci0zAHC">
+                                                    <field name="NAME">sm_reset_M4</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

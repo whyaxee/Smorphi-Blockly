@@ -1,0 +1,119 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initialize_smorphi" id="-0%EtA#/TMAEHghm/q7!" x="66" y="16"></block>
+  <block type="new_ir" id="yN:gA(@lM6%_vk{~GuXV" x="86" y="61">
+    <field name="sensor_name">sensor_status</field>
+    <field name="module_num">1</field>
+    <field name="status_num">0</field>
+    <next>
+      <block type="serial_print" id="_ssKGfU])rt5o-9=N.{J">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="NEW_LINE">TRUE</field>
+        <value name="CONTENT">
+          <block type="variables_get" id="mM`hr{@1)sosX5;_aD|~">
+            <field name="VAR">sensor_status</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="FyH-koQ1X2s3`w7kBib8">
+            <value name="IF0">
+              <block type="logic_compare" id="a_KO?#HjT;RI`+E2/4;g">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id=":j.!mZAo+Ti9_w^r(jts">
+                    <field name="VAR">sensor_status</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="I~).TsoCEswoD:PbkplS">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="serial_print" id=":@AF1S_-UK,xXJo_Nq-v">
+                <field name="SERIAL_ID">Serial</field>
+                <field name="NEW_LINE">FALSE</field>
+                <value name="CONTENT">
+                  <block type="text" id="Q5J?4YQiehjd*Zt3zG]N">
+                    <field name="TEXT">Sound detected</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="]v|PczcPp8j0`b5Wi;9_">
+                    <value name="IF0">
+                      <block type="logic_compare" id="ncQw+ir+.xgQLn?K3c+1">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="math_arithmetic" id="S5Aq%TJhlrsuRJZ2F5bW">
+                            <field name="OP">MINUS</field>
+                            <value name="A">
+                              <block type="time_millis" id="64~JOHyb,w!51*{a:Z0`"></block>
+                            </value>
+                            <value name="B">
+                              <block type="variables_get" id="X{ela!}Gkd)b{6awX:HG">
+                                <field name="VAR">lastEvent</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="QonF_R0wct5UkIj3-sXA">
+                            <field name="NUM">25</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="robot_motion" id="h)F6Kj~s|g:!yatc5lvi">
+                        <field name="NAME">MoveForward</field>
+                        <value name="NAME">
+                          <block type="math_number" id="b+zeR%z@x1y-c2,_X^du">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="time_delay" id="]713L|BYu*t)gR^!_9qz">
+                            <value name="DELAY_TIME_MILI">
+                              <block type="math_number" id="*rt[G0/3+dv}Xtsxio(b">
+                                <field name="NUM">3000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_print" id="{`8kg~U|86VuVaz;[{I(">
+                                <field name="SERIAL_ID">Serial</field>
+                                <field name="NEW_LINE">TRUE</field>
+                                <value name="CONTENT">
+                                  <block type="text" id="._*^6p~PPpFXG6yXalj0">
+                                    <field name="TEXT">Stop Smorphi!</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="robot_motion" id="7qK%t9Z7cW-.J]thAAGo">
+                                    <field name="NAME">stopSmorphi</field>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="variables_set" id=";Nud/=y;ul%Z(.e=.M}%">
+                        <field name="VAR">lastEvent</field>
+                        <value name="VALUE">
+                          <block type="time_millis" id="-@~ziVaY#`88dl)2BP^E"></block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
